@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Gallery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="fam.html">Family</a>
+  <a href="exp.html">Experience</a>
+  <a href="edu.html">Education</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html" style="float:right">Contact</a>
+</div>
+<br>
+<center>
+<video controls style="margin: 0 auto;">
+    <source src="xxx" type="video/mp4" style="width:80%">
+    Your browser does not support the video tag.
+  </video>
+</center>
+    
+<center>
+        <div class="slider-container">
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <img class="slide" src="./img/g1.JPG" alt="Image 1" style="width: 40%">
+        <img class="slide" src="./img/g2.JPG" alt="Image 2" style="width: 40%">
+        <img class="slide" src="./img/g3.JPG" alt="Image 3" style="width: 40%">
+        <img class="slide" src="./img/g4.JPG" alt="Image 1" style="width: 40%">
+        <img class="slide" src="./img/g5.JPG" alt="Image 2" style="width: 40%">
+        <img class="slide" src="./img/g6.JPG" alt="Image 3" style="width: 40%">
+        <img class="slide" src="./img/g7.JPG" alt="Image 3" style="width: 40%">
+        <img class="slide" src="./img/g8.JPG" alt="Image 3" style="width: 40%">
+        <button class="next" onclick="changeSlide(1)">❯</button>
+</center>
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    </center>
+    </body>
+</html>
